@@ -1,0 +1,39 @@
+HERO SECTION
+  - The Agile Labs
+  - Product Engineering, for users, with users.
+  - We design and build digital systems with restraint, precision, and long-term thinking.
+
+OUR PERSPECTIVE
+  - Our Perspective
+  - Most software fails through complexity, neglect, and rushed decisions made permanent.
+  - Our work prioritizes clarity over speed, structure over novelty, and decisions that still make sense years later.
+
+WHAT WE DO
+  - What We Do
+  - Product architecture & system design
+  - Full-stack web engineering
+  - Technical leadership & codebase recovery
+  - Long-term platform development
+  - We work with a limited number of clients at a time. Depth matters more than volume.
+
+HOW WE WORK
+  - How We Work
+  - Small team. Direct communication. Clear ownership.
+  - We don't outsource judgment, and we don't disappear after delivery.
+  - Our clients value calm execution, honest timelines, and software that doesn't require constant rescue.
+
+WHO WE WORK WITH
+  - Who We Work With
+  - Founders and teams who have outgrown improvisation.
+  - Organizations that understand software is an asset, not a liability.
+  - If you are optimizing for durability, we are aligned.
+
+CONTACT
+  - Contact
+  - We take on new work selectively.
+  - info@theagilelabs.com
+
+FOOTER
+  - © The Agile Labs
+  - Software, done deliberately.
+
