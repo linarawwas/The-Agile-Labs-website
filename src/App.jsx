@@ -5,6 +5,7 @@ export default function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(1);
   const lastWheelTime = useRef(0);
   const isChanging = useRef(false);
+  const parallaxIntensity = 2; // Adjust this value to control parallax strength (higher = more movement)
 
   useEffect(() => {
     // Initialize background image
@@ -48,11 +49,34 @@ export default function App() {
       });
     };
 
+    const handleMouseMove = (e) => {
+      // Calculate mouse position relative to viewport center
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      
+      // Calculate offset from center (ranges from -1 to 1)
+      const offsetX = (e.clientX - centerX) / centerX;
+      const offsetY = (e.clientY - centerY) / centerY;
+      
+      // Apply parallax effect with intensity
+      const moveX = offsetX * parallaxIntensity;
+      const moveY = offsetY * parallaxIntensity;
+      
+      // Update background position (50% is center, we shift from there)
+      const bgX = 50 + moveX;
+      const bgY = 50 + moveY;
+      
+      document.body.style.backgroundPosition = `${bgX}% ${bgY}%`;
+    };
+
     // Add wheel event listener with passive: false to allow preventDefault
     window.addEventListener("wheel", handleWheel, { passive: false });
+    // Add mousemove event listener for parallax effect
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
