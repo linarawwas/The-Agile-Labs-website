@@ -4,12 +4,14 @@ import { useState, useEffect, useRef } from "react";
 export default function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(1);
   const lastWheelTime = useRef(0);
-  const isChanging = useRef(false);
-  const parallaxIntensity = 2; // Adjust this value to control parallax strength (higher = more movement)
+
+  const updateBackgroundImage = (index) => {
+    document.body.style.backgroundImage = `url("/src/assets/${index}.png")`;
+  };
 
   useEffect(() => {
     // Initialize background image
-    document.body.style.backgroundImage = `url("/src/assets/1.png")`;
+    updateBackgroundImage(1);
 
     const handleWheel = (e) => {
       // Prevent default scrolling
@@ -17,7 +19,7 @@ export default function App() {
 
       const now = Date.now();
       // Throttle wheel events to prevent too rapid changes
-      if (now - lastWheelTime.current < 300 || isChanging.current) {
+      if (now - lastWheelTime.current < 300) {
         return;
       }
 
@@ -36,52 +38,61 @@ export default function App() {
         }
 
         if (newIndex !== prevIndex) {
-          isChanging.current = true;
-          document.body.style.backgroundImage = `url("/src/assets/${newIndex}.png")`;
-          
-          // Reset the changing flag after transition
-          setTimeout(() => {
-            isChanging.current = false;
-          }, 300);
+          // Immediate change, no transition
+          updateBackgroundImage(newIndex);
         }
 
         return newIndex;
       });
     };
 
-    const handleMouseMove = (e) => {
-      // Calculate mouse position relative to viewport center
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      
-      // Calculate offset from center (ranges from -1 to 1)
-      const offsetX = (e.clientX - centerX) / centerX;
-      const offsetY = (e.clientY - centerY) / centerY;
-      
-      // Apply parallax effect with intensity
-      const moveX = offsetX * parallaxIntensity;
-      const moveY = offsetY * parallaxIntensity;
-      
-      // Update background position (50% is center, we shift from there)
-      const bgX = 50 + moveX;
-      const bgY = 50 + moveY;
-      
-      document.body.style.backgroundPosition = `${bgX}% ${bgY}%`;
-    };
-
     // Add wheel event listener with passive: false to allow preventDefault
     window.addEventListener("wheel", handleWheel, { passive: false });
-    // Add mousemove event listener for parallax effect
-    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
+  const handlePrevious = () => {
+    if (currentImageIndex > 1) {
+      const newIndex = currentImageIndex - 1;
+      setCurrentImageIndex(newIndex);
+      updateBackgroundImage(newIndex);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentImageIndex < 10) {
+      const newIndex = currentImageIndex + 1;
+      setCurrentImageIndex(newIndex);
+      updateBackgroundImage(newIndex);
+    }
+  };
+
   return (
     <main>
+      {currentImageIndex === 5 && (
+        <>
+          <h1 style={{ 
+            position: 'absolute', 
+            top: '50%', 
+            left: '50%', 
+            transform: 'translate(-50%, -50%)',
+            textAlign: 'center'
+          }}>
+            The Agile Labs
+          </h1>
+          <div className="navigation-bar">
+            <button className="nav-button previous" onClick={handlePrevious}>
+              <span className="arrow">←</span> previous
+            </button>
+            <button className="nav-button next" onClick={handleNext}>
+              next <span className="arrow">→</span>
+            </button>
+          </div>
+        </>
+      )}
     </main>
   );
 }

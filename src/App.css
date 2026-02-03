@@ -31,10 +31,9 @@ html, body {
 
 body {
   background: url("/src/assets/1.png");
-  background-size: 120%;
-  background-position: 50% 50%;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  transition: background-image 0.5s ease-in-out, background-position 0.1s ease-out;
   color: var(--fg);
   font-family: Inter, system-ui, sans-serif;
   line-height: 1.6;
@@ -89,16 +88,7 @@ section {
 }
 
 .section-view {
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  /* No animations */
 }
 
 .hidden {
@@ -172,4 +162,53 @@ a {
 a:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.navigation-bar {
+  position: fixed;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  z-index: 1000;
+}
+
+.nav-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  transition: opacity 0.2s ease;
+}
+
+.nav-button:hover {
+  opacity: 0.7;
+}
+
+.nav-button.previous {
+  position: absolute;
+  left: 32px;
+  transform: translateY(-50%);
+}
+
+.nav-button.next {
+  position: absolute;
+  right: 32px;
+  transform: translateY(-50%);
+}
+
+.arrow {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
