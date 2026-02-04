@@ -109,7 +109,7 @@ p {
   font-size: 1.05rem;
   color: var(--bg);
   margin-bottom: 16px;
-  transform: skewX(5deg);  box-shadow: 0 0px 10px 0 rgb(75, 72, 72);
+  transform: skewX(5deg);  
 
 
 }

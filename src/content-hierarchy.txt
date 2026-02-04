@@ -1,7 +1,7 @@
 HERO SECTION
   - The Agile Labs
-  - Product Engineering, for users, with users.
-  - We design and build digital systems with restraint, precision, and long-term thinking.
+  - This is the place for creating dangerously, experimenting with new projects that align with my interests, thus called "Labs", and they're "Agile" because I like to execute with flexibility and implement agile development methods.
+  
 
 OUR PERSPECTIVE
   - Our Perspective
