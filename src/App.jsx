@@ -8,7 +8,7 @@ const sections = [
     content: (
       <>
         <h1>The Agile Labs</h1>
-        <p className="muted">Product Engineering, for users, with users.</p>
+        <p >Product Engineering, for users, with users.</p>
         <div className="divider"></div>
         <p>We design and build digital systems with restraint, precision, and long-term thinking.</p>
       </>
@@ -21,7 +21,7 @@ const sections = [
       <>
         <h2>Our Perspective</h2>
         <p>Most software fails through complexity, neglect, and rushed decisions made permanent.</p>
-        <p className="muted">Our work prioritizes clarity over speed, structure over novelty, and decisions that still make sense years later.</p>
+        <p  >Our work prioritizes clarity over speed, structure over novelty, and decisions that still make sense years later.</p>
       </>
     ),
   },
@@ -37,7 +37,7 @@ const sections = [
           <li>Technical leadership & codebase recovery</li>
           <li>Long-term platform development</li>
         </ul>
-        <p className="muted">We work with a limited number of clients at a time. Depth matters more than volume.</p>
+        <p  >We work with a limited number of clients at a time. Depth matters more than volume.</p>
       </>
     ),
   },
@@ -49,7 +49,7 @@ const sections = [
         <h2>How We Work</h2>
         <p>Small team. Direct communication. Clear ownership.</p>
         <p>We don't outsource judgment, and we don't disappear after delivery.</p>
-        <p className="muted">Our clients value calm execution, honest timelines, and software that doesn't require constant rescue.</p>
+        <p  >Our clients value calm execution, honest timelines, and software that doesn't require constant rescue.</p>
       </>
     ),
   },
@@ -61,7 +61,7 @@ const sections = [
         <h2>Who We Work With</h2>
         <p>Founders and teams who have outgrown improvisation.</p>
         <p>Organizations that understand software is an asset, not a liability.</p>
-        <p className="muted">If you are optimizing for durability, we are aligned.</p>
+        <p  >If you are optimizing for durability, we are aligned.</p>
       </>
     ),
   },
@@ -82,7 +82,7 @@ const sections = [
     content: (
       <>
         <p>© The Agile Labs</p>
-        <p className="muted">Software, done deliberately.</p>
+        <p  >Software, done deliberately.</p>
       </>
     ),
   },

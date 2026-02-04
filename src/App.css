@@ -1,8 +1,30 @@
 :root {
   --bg: #0e0e0e;
-  --fg: #f5f5f5;
-  --muted: #9a9a9a;
+  --fg: #0e0e0e;
+  --muted:#0e0e0e;
   --accent: #d4af37; /* muted gold */
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;  color: var(--bg);
+
+}
+
+body {
+  background: url("/src/assets/1.png");
+  background-size: cover;
+  background-position: center;  
+  font-weight: 800;
+
+  background-repeat: no-repeat;  
+  font-family: "Playfair Display", serif;
+
+  color: var(--fg);
+  line-height: 1.6;
+  letter-spacing: 0.2px;
 }
 h1,
 h2 {
@@ -13,24 +35,7 @@ h2 {
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
 
-body {
-  background: url("/src/assets/1.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--fg);
-  font-family: Inter, system-ui, sans-serif;
-  line-height: 1.6;
-  letter-spacing: 0.2px;
-}
 
 main {
   max-width: 45%;
@@ -80,24 +85,23 @@ section {
   opacity: 0.7;
 }
 
-.section-view {
-  /* No animations */
-}
+/* Section view styles */
 
 .hidden {
   display: none;
 }
 
 h1 {
-  font-family: "Playfair Display", serif;
-  font-size:130px;
+  font-size:30px;
   margin-bottom: 24px;
+  transform: skewX(-10deg); box-shadow: 0 0px 10px 0 rgb(75, 72, 72);
 }
 
 h2 {
-  font-family: "Playfair Display", serif;
-  font-size:130px;
+  font-size:30px;
   margin-bottom: 24px;
+  transform: skewX(-10deg); box-shadow: 0 0px 10px 0 rgb(75, 72, 72);
+
 }
 
 p {
@@ -105,10 +109,9 @@ p {
   font-size: 1.05rem;
   color: var(--bg);
   margin-bottom: 16px;
-}
+  transform: skewX(5deg);  box-shadow: 0 0px 10px 0 rgb(75, 72, 72);
 
-.muted {
-  color: var(--muted);
+
 }
 
 .accent {
@@ -130,7 +133,6 @@ ul {
 
 ul li {
   margin-bottom: 12px;
-  color: var(--muted);
 }
 
 footer {
@@ -175,7 +177,6 @@ a:hover {
   background: transparent;
   border: none;
   color: white;
-  font-family: Inter, system-ui, sans-serif;
   font-size: 1rem;
   cursor: pointer;
   display: flex;
@@ -203,7 +204,6 @@ a:hover {
 
 .arrow {
   font-size: 1.2rem;
-  font-weight: bold;
 }
 
 .sections-list {
@@ -229,7 +229,6 @@ a:hover {
   color: var(--bg);
   text-decoration: none;
   font-size: 1.2rem;
-  font-weight: 500;
   padding: 12px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   border-top: none;
@@ -255,8 +254,58 @@ a:hover {
   max-width: 1200px;
   padding: 40px;
 }
-media (max-width: 768px) {
 
-main {
-  max-width: 90%;}
+.section-content h1,
+.section-content h2 {
+  background-image: url("/src/assets/kraft-paper-texture-distressed-with-textural-wrinkles.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 16px 24px;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.section-content p {
+  background-image: url("/src/assets/kraft-paper-texture-distressed-with-textural-wrinkles.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 12px 20px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.section-content ul li {
+  background-image: url("/src/assets/kraft-paper-texture-distressed-with-textural-wrinkles.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 8px 16px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.section-content a {
+  background-image: url("/src/assets/kraft-paper-texture-distressed-with-textural-wrinkles.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4px 12px;
+  display: inline-block;
+}
+
+.section-content .divider {
+  background-image: url("/src/assets/kraft-paper-texture-distressed-with-textural-wrinkles.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2px 80px;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  main {
+    max-width: 90%;
+  }
 }

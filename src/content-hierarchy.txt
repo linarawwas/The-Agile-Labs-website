@@ -32,8 +32,3 @@ CONTACT
   - Contact
   - We take on new work selectively.
   - info@theagilelabs.com
-
-FOOTER
-  - © The Agile Labs
-  - Software, done deliberately.
-
